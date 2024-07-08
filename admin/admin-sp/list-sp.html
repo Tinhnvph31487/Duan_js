@@ -1,0 +1,58 @@
+
+
+
+
+<div class="container-fluid">
+          <div class="container pt-5">
+              <h3 class="text-center"> Danh Mục sản phẩm</h3>
+              <div class="d-flex justify-content-end">
+                  <a href="#!tao_moisp"><button type="button" class="m-3 btn btn-success">
+                    Tạo mới danh mục
+                </button></a>
+              </div>
+              <!-- <div class="text-end">
+                  <a href="" class="btn btn-success">Tạo mới sản phẩm</a>
+              </div> -->
+              <table class="table table-hover table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Hình ảnh</th>
+                      <th>Tên sản phẩm</th>
+                      <th>Giá</th>
+                      <th>Danh mục</th>
+                      <th>Trạng thái</th>
+                      <th>Chức năng</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <tr ng-repeat="item in danhsachSanPham">
+                      <td>{{item.id}}</td>
+                      <td>
+                      <div style="height:50px;width: 50px;"
+                           class="border rounded bg-light overflow-hidden
+                            d-flex justify-content-center align-items-center">
+      
+                              <img class="mh-100 mw-100" src="/img/{{item.hinhAnh}}" alt="">
+                          </div>
+                      </td>
+                      <td>{{item.tenSanPham}}</td>
+                      <td>{{item.gia}}</td>
+                      
+                      <td>{{item.tenDanhMuc}}</td>
+                      <td><button class="btn btn-success rounded-pill btn-sm">Còn hàng</button></td>
+                      <td style="width: 1px;" class="text-nowrap">
+                        <a href="#!chiTiet/{{item.id}}">Xem</a>
+                          <a href="#!sua/{{item.id}}"> <button type="button" class="btn btn-warning btn-sm">
+                            Sửa
+                        </button></a>
+                          <button ng-click="Xoa(item.id)" class="btn btn-danger btn-sm">Xoá</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+        
+      
+  </div>
+</div>

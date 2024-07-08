@@ -1,0 +1,94 @@
+      <div class="container-fluid  border-top text-center pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <!-- Box hiển thị sản phẩm -->
+                    <div class="rounded overflow-hidden">
+                       <div class="m-2">
+                        <div class=" d-flex align-items-center justify-content-center" style="height: 600px;">
+                            <img class="mh-100 mw-100" src="../img/{{product.hinhAnh}}" alt="" style="width: 90%;">
+                        </div>
+                        
+                       </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <!-- Box hiển thị sản phẩm -->
+                    <div class="rounded overflow-hidden">
+                       <div class="m-2">
+                         <!-- KV tên sp -->
+                         <h1 class=" justify-content-center d-flex pb-5" style="height: 25px;">{{product.tenSanPham}}</h1>
+                         <ul class="navbar-nav">
+                            <div class="d-flex justify-content-center">
+                                <h5>Giá :</h5>
+                                <div class="text-decoration-line-through">8.000.000đ </div>
+                                <!-- Gia bán -->
+                                <div class=" ps-5">--</div>
+                                <div class=" ps-5">{{product.gia}} đ</div>
+                            </div>
+                            <li class=""><a class="nav-link" href="">Màu sắc hiển thị: Trắng/Màu đen/Đen nguyên chất</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Phong cách: FD0736-104</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Giới thiệu sản phẩm: Thiết kế tiên tiến. Thiết kế cổ điển. Giày có hai nét duyên dáng. V2K tái tạo tất cả các yếu tố phổ biến của Vomero, tạo ra một thiết kế trông giống như bước ra từ danh mục giày chạy bộ đầu những năm 2000. Các chi tiết bằng kim loại, nhựa tuyệt đẹp gợi nhớ đến Vomero 5 và đế giữa kết hợp với nhau để tạo cảm giác cổ điển hoàn hảo. Gót chân rộng rãi mang đến sự thoải mái ở bất cứ nơi đâu bạn đến.</a></li>
+
+                            <div class="d-flex justify-content-center">
+                                <a href="chitietsp.html">
+                                    <button type="button" class="mt-2 btn btn-danger rounded-pill">
+                                        Thêm vào giỏ hàng
+                                    </button>
+                                </a>
+                                <a href="thanhtoan.html"><button type="button" class="ps-5 px-5 mt-2 btn btn-danger rounded-pill">
+                                    Mua ngay
+                                </button></a>
+                            </div>
+                         </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="container" style="min-height: calc(100vh - 125px);">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel" >
+          <!-- Khu vực nội dung chính -->
+    <div>
+        <h3 class="pt-5 mt-3">Sản phẩm Liên quan</h3>
+        <!-- Khu vực danh sách sản phẩm -->
+        <div class="row">
+            
+            <div class="col-3" ng-repeat="duc in danhsachSanPham">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                        <img class="mh-100 mw-100" src="../img/{{duc.hinhAnh}}" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;">{{duc.tenSanPham}}</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">9.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>{{duc.tenSanPham}}</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+    </div>
+    
+</div>
+    

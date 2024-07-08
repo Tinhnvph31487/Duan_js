@@ -1,0 +1,129 @@
+{
+  "danh_muc": [
+    {
+      "id": "2",
+      "tenDanhMuc": "Giày nike"
+    },
+    {
+      "id": "3",
+      "tenDanhMuc": "Giày adidas"
+    },
+    {
+      "id": "4",
+      "tenDanhMuc": "Giày nike airmax"
+    }
+  ],
+  "san_pham": [
+    {
+      "id": "1",
+      "hinhAnh": "b75806-1.avif",
+      "tenSanPham": "Giày adidas Samba",
+      "gia": "3350000",
+      "tenDanhMuc": "Giày adidas",
+      "soluong": "1"
+    },
+    {
+      "id": "2",
+      "soluong": "1",
+      "hinhAnh": "dv0991-101-1.avif",
+      "tenSanPham": "Giày nike mid jordan panda",
+      "gia": "6700000",
+      "tenDanhMuc": "Giày adidas"
+    },
+    {
+      "id": "3",
+      "soluong": "1",
+      "hinhAnh": "dz4549-100-1.avif",
+      "tenSanPham": "Giày nike airmax",
+      "gia": "3500000",
+      "tenDanhMuc": "Giày adidas"
+    },
+    {
+      "id": "13",
+      "soluong": "1",
+      "hinhAnh": "553558-041-1.avif",
+      "tenSanPham": "Giày jordan",
+      "gia": "123",
+      "tenDanhMuc": "Danh mục 01"
+    },
+    {
+      "id": "1",
+      "soluong": "1",
+      "hinhAnh": "b75806-1.avif",
+      "tenSanPham": "Giày adidas Samba",
+      "gia": "3350000",
+      "tenDanhMuc": "Giày adidas"
+    },
+    {
+      "id": "2",
+      "hinhAnh": "dv0991-101-1.avif",
+      "tenSanPham": "Giày nike mid jordan panda",
+      "gia": "6700000",
+      "tenDanhMuc": "Giày adidas"
+    },
+    {
+      "id": "3",
+      "hinhAnh": "dz4549-100-1.avif",
+      "tenSanPham": "Giày nike airmax",
+      "gia": "3500000",
+      "tenDanhMuc": "Giày adidas"
+    }
+  ],
+  "thanh_toan": [
+    {
+      "id": "",
+      "tensanpham": "",
+      "gia": "",
+      "soluong": "",
+      "tenkhachhang": "",
+      "sdt": "",
+      "diachi": "",
+      "email": "",
+      "phuongthucthanhtoan": ""
+    }
+  ],
+  "Dangnhap-dangky": [
+    {
+      "id": "d2b8",
+      "tentaikhoan": "Munters1",
+      "sdt": "0372699302",
+      "email": "vantinh16082003@gmail.com",
+      "matkhau": "123456"
+    },
+    {
+      "id": "8c8a",
+      "tentaikhoan": "íahdas",
+      "matkhau": "12eq2"
+    },
+    {
+      "id": "ed18",
+      "tentaikhoan": "munters1",
+      "matkhau": "123456"
+    },
+    {
+      "id": "02cc",
+      "tentaikhoan": "admin2",
+      "sdt": "0372699302",
+      "email": "vantinh16082003@gmail.com",
+      "matkhau": "12344"
+    }
+  ],
+  "gio_hang": [
+    {
+      "id": "2",
+      "soluong": "1",
+      "hinhAnh": "dv0991-101-1.avif",
+      "tenSanPham": "Giày nike mid jordan panda",
+      "gia": "6700000",
+      "tenDanhMuc": "Giày adidas"
+    },
+    {                      
+      "id": "1",
+      "hinhAnh": "b75806-1.avif",
+      "tenSanPham": "Giày adidas Samba",
+      "gia": "3350000",
+      "tenDanhMuc": "Giày adidas",
+      "soluong": "1"
+    }
+  ]
+}

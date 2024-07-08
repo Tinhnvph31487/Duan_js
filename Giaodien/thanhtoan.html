@@ -1,0 +1,315 @@
+      <div class="container-fluid  border-top text-center pt-5">
+        <div class="container">
+          
+            <div class="row">
+                
+                <div class="col-8">
+                    <h1 class="py-5">Giỏ hàng của bạn</h1>
+
+
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Thao tác</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="item in danhsachDH">
+
+                                    <td>{{item.tenSanPham}}</td>
+                                    <td>{{item.soluong}}</td>
+                                    <td>{{item.gia*item.soluong}}</td>
+                                   
+                              <td><div class="btn btn-danger">Xoá</div>
+                            </td>
+                              </tr>
+                            </tbody>
+                           
+                          </table>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <!-- Box hiển thị sản phẩm -->
+                    <div class="rounded overflow-hidden">
+                       <div class="m-2">
+                         <!-- KV tên sp -->
+                         <h1 class=" d-flex pb-5 d-flex justify-content-center" style="height: 25px;">Tổng đơn hàng</h1>
+                         
+                         <ul class="p-3 navbar-nav">
+                            <div class="p-5 d-flex">
+                                
+                                <h5>Tổng :</h5>
+
+                             
+                                <!-- Gia bán -->
+                                <div class=" ps-5">{{tongGia()}}</div>
+                            </div>
+                            <div class="container p-2">
+                                <h4>Thông tin người mua hàng</h4>
+                                        <form>
+                                          <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <input id="email" type="text" class="form-control" name="email" placeholder="Name">
+                                          </div>
+                                          <br>
+                                           <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                            <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+                                          </div>
+                                          <br>
+                                           <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                                            <input id="email" type="text" class="form-control" name="email" placeholder="Address">
+                                          </div>
+                                          <br>
+                                          <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                            <input id="email" type="text" class="form-control" name="email" placeholder="Phone">
+                                          </div>
+                                          <br>
+                                          <select class="form-select" aria-label="Default select example">
+                                            <option selected>Phương thức thanh toán</option>
+                                            <option value="1">Thanh toán khi nhận hàng</option>
+                                            <option value="2">Chuyển khoản</option>
+                                            
+                                          </select>
+                        
+                                          <br>
+                                          <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                            <textarea rows="5" class="form-control" style="resize: none;" name="content">Ghi chú</textarea>
+                                          </div>
+                                          
+                                          
+                                          <br>
+                                         
+                                           <input type="submit" class="btn btn-success" value="Thanh toán">
+                                        </form>
+                              </div>
+
+                            <div class="d-flex justify-content-center">
+                               
+                               
+                            </div>
+                         </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container" style="min-height: calc(100vh - 125px);">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel" >
+          <!-- Khu vực nội dung chính -->
+    <div>
+        <h3 class="pt-5 mt-3">Sản phẩm Liên quan</h3>
+        <!-- Khu vực danh sách sản phẩm -->
+        <div class="row">
+            
+            <div class="col-3">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                        <img class="mh-100 mw-100" src="../img/b75806-1.avif" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;"> Giày adidas samba</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">1.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>800.000</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height:400px;">
+                        <img class="mh-100 mw-100" src="../img/553558-041-1.avif" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;"> Giày jordan mid</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">1.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>800.000</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                        <img class="mh-100 mw-100" src="../img/ci5646-100-1.avif" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;">Già airmax</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">1.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>800.000</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                        <img class="mh-100 mw-100" src="../img/ct2302-002-1.webp" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center pt-3 d-flex" style="height: 48px;" >Giày AF1</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">1.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>800.000</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-3">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                        <img class="mh-100 mw-100" src="../img/dh8010-101-1.avif" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center d-flex  pt-3" style="height: 48px;"> Giày nike airmax</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">1.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>800.000</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height:400px;">
+                        <img class="mh-100 mw-100" src="../img/dz4549-100-1.avif" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;"> Giày nike airmax</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">1.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>800.000</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                        <img class="mh-100 mw-100" src="../img/dz4549-001-1.avif" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;"> Giày nike airmax</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">1.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>800.000</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <!-- Box hiển thị sản phẩm -->
+                <div class="border mt-3 mb-2 rounded overflow-hidden">
+                    <!-- KV hình ảnh -->
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                        <img class="mh-100 mw-100" src="../img/dz0482-200-1.webp" alt="" style="width: 90%;">
+                    </div>
+
+                   <div class="m-2">
+                     <!-- KV tên sp -->
+                     <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;" > Giày nike airmax</h1>
+
+                     <!-- KV giá sp -->
+                     <div class="d-flex justify-content-between">
+                         <!-- Giá niêm yết -->
+                     <div class="text-decoration-line-through">1.000.000đ </div>
+                     <!-- Gia bán -->
+                     <div>800.000</div>
+                     </div>
+                     <!-- KV button tương tác -->
+                     <button class="btn btn-danger w-100 rounded-pill">Mua ngay</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+  
+</div>

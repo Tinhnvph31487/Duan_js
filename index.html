@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap.css">
+    <script src="lib/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    
+    <script>
+      var myApp = angular.module('myApp', ['ngRoute']);
+
+      myApp.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl: "html.html",
+                    controller:"listProductGiaoDienl"
+                })
+                .when("/giaoDienChiTiet/:id", {
+                    templateUrl: "Giaodien/chitiesp.html",
+                    controller:"detailGiaoDienProductCtrl",
+                    
+                })
+                .when("/giaoDienThanhToan", {
+                    templateUrl: "Giaodien/thanhtoan.html",
+                    controller:"giaoDienTT"
+                })
+                .when("/DangKy", {
+                    templateUrl: "dangKy-dangNhap/DangKy.html",
+                    controller:"DangKytk"
+                })
+                .when("/DangNhap", {
+                    templateUrl: "dangKy-dangNhap/dangNhap.html",
+                    controller:"DangNhapCtrl"
+                })
+                .when("/giohang", {
+                    templateUrl: "Giaodien/giohang.html",
+                    controller:"KistGiohang"
+                })
+                .otherwise({
+                  redirectTo: '/'
+                });
+        })
+
+    </script>
+    <script src="js.js"></script>
+    <script src="Giaodien/chitietsp.js"></script>
+    <script src="Giaodien/thanhtoan.js"></script>
+    <script src="dangKy-dangNhap/DangKy.js"></script>
+    <script src="dangKy-dangNhap/DangNhap.js"></script>
+    <script src="Giaodien/giohang.js"></script>
+
+</head>
+<body ng-app="myApp">
+    <!-- Khu vực của header -->
+    <nav class="navbar navbar-expand-sm bg-dark">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center">
+              <!-- Khu vực logo -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="" href="#!giaoDien">
+                    <img style="height: 50px;" src="logo.png">
+                </a>
+                </li>
+              </ul>
+            <!-- Links -->
+          </div>
+          <!-- Khu vực đăng ký đăng nhập -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <body>
+                  <a href="#!DangNhap"><button type="button" class="btn btn-danger">
+                    Đăng nhập
+                  </button></a>
+              </a>
+            </li>
+            <li class="nav-item p-3" >
+              <a href="#!DangKy"><button type="button" class="btn btn-danger" >
+                Đăng kí
+              </button></a>              
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-sm bg-light">
+        <div class="container">
+          <div class="d-flex align-items-center">
+              <!-- Khu vực logo -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+              </ul>
+            <!-- Links -->
+            <ul class="navbar-nav ms-5">
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#">Giày đi bộ</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#!giaoDienThanhToan">Giày chạy</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#">Giày thời trang</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-3" href="#">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-3" href="#">Tiểu sử</a>
+                        </li>
+            </ul>
+          </div>
+          <!-- Khu vực đăng ký đăng nhập -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <!-- Button to Open the Modal -->
+                <button type="button" class="mt-2 btn btn-outline-secondary rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#myModal">
+                    <i class=" bi bi-search"></i>
+                                Tìm kiếm ... 
+                </button>
+                <a href="#!giohang"><i class=" m-3 bi bi-cart-plus p-3"></i></a>
+                <!-- The Modal -->
+                <div class="modal container-fluid" id="myModal">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <form>
+                                <div class="row justify-content-center">
+                                  <div class="col-8">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm">
+                                  </div>
+                                  <div class="col">
+                                    
+                                    <button class="btn btn-outline-secondary rounded-pill"><i class=" bi bi-search"></i></button>
+                                  </div>
+                                </div>
+                              </form>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <h5>Giày chạy</h5>
+                            <h5>running</h5>
+                            <h5>Giày AF1</h5>
+                            <h5>Giày thể thao</h5>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div ng-view>
+        <div ng-controller="listProductGiaoDienl">
+
+          <!-- Khu vực slide -->
+<div class="container" style="min-height: calc(100vh - 125px);">
+  <div id="demo" class="carousel slide" data-bs-ride="carousel" >
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+      
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="1920x750_hunter_junior_affc445654544dd5afdb3512e86886f4.webp" alt="Los Angeles" class="d-block" style="width:100%">
+        </div>
+        <div class="carousel-item">
+          <img src="1920x750_hunter_junior_affc445654544dd5afdb3512e86886f4.webp" alt="Chicago" class="d-block" style="width:100%">
+        </div>
+        <div class="carousel-item">
+          <img src="1920x750_hunter_junior_affc445654544dd5afdb3512e86886f4.webp" alt="New York" class="d-block" style="width:100%">
+        </div>
+      </div>
+      
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    <div >
+      <h4 class="pt-5 d-flex justify-content-center">Sức sống mùa Xuân với những món quà tươi mới </h4>
+      <h6 class="pt-3 d-flex justify-content-center">Bộ sưu tập mùa xuân.Bắt đầu cuộc sống mới phù hợp với bạn với những món đồ tiện nghi và tươi mới.</h6>
+      <h6 class="d-flex justify-content-center">Hãy xem bộ sư tập mới ngay bây giờ,Bao gồm cả Air max Coca sandan,phù hợp với mọi phong cách</h6>
+      <div class="pt-5 justify-content-center d-flex">
+          <button class="btn btn-dark">Xem bộ sưu tập</button>
+      </div>
+    </div>
+
+
+
+    <!-- Khu vực nội dung chính -->
+<div>
+  <h3 class="pt-5 mt-3">Sản phẩm nổi bật/Phổ biến</h3>
+  <div class="row">
+      
+      <div class="col-4">
+          <!-- Box hiển thị sản phẩm -->
+          <div class="border mt-3 mb-2 rounded overflow-hidden">
+              <!-- KV hình ảnh -->
+              <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                  <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp (1).jpg" alt="" style="width: 100%; height: 100%;">
+              </div>
+
+             <div class="m-2">
+               <!-- KV tên sp -->
+               <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;">Giày chạy nike</h1>
+             </div>
+          </div>
+      </div>
+      <div class="col-4">
+          <!-- Box hiển thị sản phẩm -->
+          <div class="border mt-3 mb-2 rounded overflow-hidden">
+              <!-- KV hình ảnh -->
+              <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                  <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp.jpg" alt="" style="width: 100%; height: 100%;">
+              </div>
+
+             <div class="m-2">
+               <!-- KV tên sp -->
+               <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;">Giày đá bóng nike</h1>
+             </div>
+          </div>
+      </div>
+      <div class="col-4">
+          <!-- Box hiển thị sản phẩm -->
+          <div class="border mt-3 mb-2 rounded overflow-hidden">
+              <!-- KV hình ảnh -->
+              <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                  <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp.png" alt="" style="width: 100%; height: 100%;">
+              </div>
+
+             <div class="m-2">
+               <!-- KV tên sp -->
+               <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;" >Giày nike airmax</h1>
+             </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+</div>
+
+<div class="pt-5 pb-3">
+  <img src="image/nike-just-do-it-nike-com-jp (2).jpg" alt="" style="width: 100%;">
+</div>
+
+<div class="container" style="min-height: calc(100vh - 125px);">
+  <div id="demo" class="carousel slide" data-bs-ride="carousel" >
+    <!-- Khu vực nội dung chính -->
+<div>
+  <h3 class="pt-5 mt-3">Sản phẩm mới</h3>
+  <!-- Khu vực danh sách sản phẩm -->
+  <div class="row">
+      
+      <div class="col-3" ng-repeat="item in listGiaoDien">
+          <!-- Box hiển thị sản phẩm -->
+          <div class="border mt-3 mb-2 rounded overflow-hidden">
+              <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                  <img class="mh-100 mw-100" src="img/{{item.hinhAnh}}" alt="" style="width: 90%;">
+              </div>
+              <!-- KV hình ảnh
+              <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                  <a href=""><img class="mh-100 mw-100" src="img/{{item.hinhAnh}}" alt="" style="width: 90%;"></a>
+              </div> -->
+
+             <div class="m-2">
+               <!-- KV tên sp -->
+               <a href="#!giaoDienChiTiet/{{item.id}}"><h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;">{{item.tenSanPham}}</h1></a>
+               
+
+               <!-- KV giá sp -->
+               <div class="d-flex justify-content-between">
+                   <!-- Giá niêm yết -->
+               <div class="text-decoration-line-through">8.000.000đ </div>
+               <!-- Gia bán -->
+               <div>{{item.gia}}</div>
+               </div>
+               <!-- KV button tương tác -->
+               <a href="#!giohang"> <button class="btn btn-danger w-100 rounded-pill" ng-click="onClickSubmit()">Thêm vào giỏ hàng</button></a>
+             </div>
+          </div>
+      </div>
+     
+  </div>
+</div>
+
+
+</div>
+<div class="py-4">
+  <h3 class="pt-5 mt-3">Sản phẩm bán chạy</h3>
+  <div class="row">
+      
+      <div class="col-4">
+          <!-- Box hiển thị sản phẩm -->
+          <div class="border mt-3 mb-2 rounded overflow-hidden">
+              <!-- KV hình ảnh -->
+              <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                  <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp (1).jpg" alt="" style="width: 100%; height: 100%;">
+              </div>
+
+             <div class="m-2">
+               <!-- KV tên sp -->
+               <h1 class="h6 justify-content-center d-flex" style="height: 48px;"> Running</h1>
+             </div>
+          </div>
+      </div>
+      <div class="col-4">
+          <!-- Box hiển thị sản phẩm -->
+          <div class="border mt-3 mb-2 rounded overflow-hidden">
+              <!-- KV hình ảnh -->
+              <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                  <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp.jpg" alt="" style="width: 100%; height: 100%;">
+              </div>
+
+             <div class="m-2">
+               <!-- KV tên sp -->
+               <h1 class="h6 justify-content-center d-flex" style="height: 48px;">Jordan</h1>
+             </div>
+          </div>
+      </div>
+      <div class="col-4">
+          <!-- Box hiển thị sản phẩm -->
+          <div class="border mt-3 mb-2 rounded overflow-hidden">
+              <!-- KV hình ảnh -->
+              <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                  <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp.png" alt="" style="width: 100%; height: 100%;">
+              </div>
+
+             <div class="m-2">
+               <!-- KV tên sp -->
+               <h1 class="h6 justify-content-center d-flex" style="height: 48px;" >NIKE</h1>
+             </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+      </div>
+
+      </div>
+       
+      
+    
+
+
+    <!-- Khu vực footer -->
+    <div class="container-fluid bg-light border-top text-center pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <!-- Box hiển thị sản phẩm -->
+                    <div class="rounded overflow-hidden">
+                       <div class="m-2">
+                         <!-- KV tên sp -->
+                         <h1 class="h6 justify-content-center d-flex" style="height: 25px;"> Tư Cách Thành viên</h1>
+                         <h1 class="h6 justify-content-center d-flex" style="height: 25px;"> Lịch sử đơn hàng</h1>
+                         <h1 class="h6 justify-content-center d-flex" style="height: 25px;"> Tìm kiếm cửa hàng</h1>
+                         <h1 class="h6 justify-content-center d-flex" style="height: 25px;"> Thẻ quà tặng</h1>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <!-- Box hiển thị sản phẩm -->
+                    <div class="rounded overflow-hidden">
+                       <div class="m-2">
+                         <!-- KV tên sp -->
+                         <h1 class="h6 justify-content-center d-flex" style="height: 25px;">Giảm giá khác nhau</h1>
+                         <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="">Giảm giá thanh viên</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Giảm giá cho Sinh viên/Giảng Viên</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Giảm giá thanh viên</a></li>
+
+                         </ul>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <!-- Box hiển thị sản phẩm -->
+                    <div class="rounded overflow-hidden">
+                       <div class="m-2">
+                         <!-- KV tên sp -->
+                         <h1 class="h6 justify-content-center d-flex" style="height: 25px;">Giúp dỡ</h1>
+                         <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="">Vận chuyển</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Trở lại</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Phương thức thanh toán</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Nhận hàng</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Kiểm tra</a></li>
+
+                         </ul>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <!-- Box hiển thị sản phẩm -->
+                    <div class="rounded overflow-hidden">
+                       <div class="m-2">
+                         <!-- KV tên sp -->
+                         <h1 class="h6 justify-content-center d-flex" style="height: 25px;">Thông tin công ty</h1>
+                         <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="">...</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Tin tức</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Thông tin tuyển dụng</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Sự Bền vững</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Nhận sét</a></li>
+
+                         </ul>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <!-- Box hiển thị sản phẩm -->
+                    <div class="rounded overflow-hidden">
+                       <div class="m-2">
+                        <i  class="bi bi-twitter fa-2x p-3"></i>
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-youtube p-3"></i>
+                        <i class="bi bi-instagram"></i>
+                       
+                       </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        Xin cảm ơn quý khách @
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,189 @@
+  <!-- Khu vực slide -->
+  <div class="container" style="min-height: calc(100vh - 125px);">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel" >
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="1920x750_hunter_junior_affc445654544dd5afdb3512e86886f4.webp" alt="Los Angeles" class="d-block" style="width:100%">
+          </div>
+          <div class="carousel-item">
+            <img src="1920x750_hunter_junior_affc445654544dd5afdb3512e86886f4.webp" alt="Chicago" class="d-block" style="width:100%">
+          </div>
+          <div class="carousel-item">
+            <img src="1920x750_hunter_junior_affc445654544dd5afdb3512e86886f4.webp" alt="New York" class="d-block" style="width:100%">
+          </div>
+        </div>
+        
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+      <div>
+        <h4 class="pt-5 d-flex justify-content-center">Sức sống mùa Xuân với những món quà tươi mới </h4>
+        <h6 class="pt-3 d-flex justify-content-center">Bộ sưu tập mùa xuân.Bắt đầu cuộc sống mới phù hợp với bạn với những món đồ tiện nghi và tươi mới.</h6>
+        <h6 class="d-flex justify-content-center">Hãy xem bộ sư tập mới ngay bây giờ,Bao gồm cả Air max Coca sandan,phù hợp với mọi phong cách</h6>
+        <div class="pt-5 justify-content-center d-flex">
+            <button class="btn btn-dark">Xem bộ sưu tập</button>
+        </div>
+      </div>
+
+
+
+      <!-- Khu vực nội dung chính -->
+<div>
+    <h3 class="pt-5 mt-3">Sản phẩm nổi bật/Phổ biến</h3>
+    <div class="row">
+        
+        <div class="col-4">
+            <!-- Box hiển thị sản phẩm -->
+            <div class="border mt-3 mb-2 rounded overflow-hidden">
+                <!-- KV hình ảnh -->
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                    <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp (1).jpg" alt="" style="width: 100%; height: 100%;">
+                </div>
+
+               <div class="m-2">
+                 <!-- KV tên sp -->
+                 <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;">Giày chạy nike</h1>
+               </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <!-- Box hiển thị sản phẩm -->
+            <div class="border mt-3 mb-2 rounded overflow-hidden">
+                <!-- KV hình ảnh -->
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                    <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp.jpg" alt="" style="width: 100%; height: 100%;">
+                </div>
+
+               <div class="m-2">
+                 <!-- KV tên sp -->
+                 <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;">Giày đá bóng nike</h1>
+               </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <!-- Box hiển thị sản phẩm -->
+            <div class="border mt-3 mb-2 rounded overflow-hidden">
+                <!-- KV hình ảnh -->
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                    <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp.png" alt="" style="width: 100%; height: 100%;">
+                </div>
+
+               <div class="m-2">
+                 <!-- KV tên sp -->
+                 <h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;" >Giày nike airmax</h1>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="pt-5 pb-3">
+    <img src="image/nike-just-do-it-nike-com-jp (2).jpg" alt="" style="width: 100%;">
+</div>
+
+<div class="container" style="min-height: calc(100vh - 125px);">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel" >
+      <!-- Khu vực nội dung chính -->
+<div>
+    <h3 class="pt-5 mt-3">Sản phẩm mới</h3>
+    <!-- Khu vực danh sách sản phẩm -->
+    <div class="row">
+        
+        <div class="col-3" ng-repeat="item in listGiaoDien">
+            <!-- Box hiển thị sản phẩm -->
+            <div class="border mt-3 mb-2 rounded overflow-hidden">
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                    <img class="mh-100 mw-100" src="img/{{item.hinhAnh}}" alt="" style="width: 90%;">
+                </div>
+                <!-- KV hình ảnh
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+                    <a href=""><img class="mh-100 mw-100" src="img/{{item.hinhAnh}}" alt="" style="width: 90%;"></a>
+                </div> -->
+
+               <div class="m-2">
+                 <!-- KV tên sp -->
+                 <a href="#!giaoDienChiTiet/{{item.id}}"><h1 class="h6 justify-content-center d-flex pt-3" style="height: 48px;">{{item.tenSanPham}}</h1></a>
+                 
+
+                 <!-- KV giá sp -->
+                 <div class="d-flex justify-content-between">
+                     <!-- Giá niêm yết -->
+                 <div class="text-decoration-line-through">8.000.000đ </div>
+                 <!-- Gia bán -->
+                 <div>{{item.gia}}</div>
+                 <div hidden>{{item.soluong}}</div>
+                 </div>
+                 <!-- KV button tương tác -->
+                 <a href="#!giohang"> <button class="btn btn-danger w-100 rounded-pill" ng-click="addToCart(item)">Thêm vào giỏ hàng</button></a>
+               </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+
+</div>
+<div class="py-4">
+    <h3 class="pt-5 mt-3">Sản phẩm bán chạy</h3>
+    <div class="row">
+        
+        <div class="col-4">
+            <!-- Box hiển thị sản phẩm -->
+            <div class="border mt-3 mb-2 rounded overflow-hidden">
+                <!-- KV hình ảnh -->
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                    <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp (1).jpg" alt="" style="width: 100%; height: 100%;">
+                </div>
+
+               <div class="m-2">
+                 <!-- KV tên sp -->
+                 <h1 class="h6 justify-content-center d-flex" style="height: 48px;"> Running</h1>
+               </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <!-- Box hiển thị sản phẩm -->
+            <div class="border mt-3 mb-2 rounded overflow-hidden">
+                <!-- KV hình ảnh -->
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                    <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp.jpg" alt="" style="width: 100%; height: 100%;">
+                </div>
+
+               <div class="m-2">
+                 <!-- KV tên sp -->
+                 <h1 class="h6 justify-content-center d-flex" style="height: 48px;">Jordan</h1>
+               </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <!-- Box hiển thị sản phẩm -->
+            <div class="border mt-3 mb-2 rounded overflow-hidden">
+                <!-- KV hình ảnh -->
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 500px;">
+                    <img class="mh-100 mw-100" src="image/nike-just-do-it-nike-com-jp.png" alt="" style="width: 100%; height: 100%;">
+                </div>
+
+               <div class="m-2">
+                 <!-- KV tên sp -->
+                 <h1 class="h6 justify-content-center d-flex" style="height: 48px;" >NIKE</h1>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

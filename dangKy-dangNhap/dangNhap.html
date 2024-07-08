@@ -1,0 +1,26 @@
+<div>
+    <div class="modal-dialog ">
+      <div class="modal-content container-fluid col-sm-8">
+          <form action="">
+              <h1 class="p-2 d-flex justify-content-center">ĐĂNG NHẬP TÀI KHOẢN</h1>
+              <div class="mb-3 mt-3">
+                <label class="form-label">Tên tài khoản:</label>
+                <input type="text" class="form-control" ng-model="user.tentaikhoan" placeholder="Enter Tên tài khoản">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Password:</label>
+                <input type="password" class="form-control"  placeholder="Enter password" ng-model="user.matkhau">
+              </div>
+              
+              <div class="mb-3 mt-3 p-1 d-flex justify-content-center" >
+                  <button class="btn btn-primary" ng-click="onClickLogin()">Đăng Nhập</button>
+              </div>
+              <div class="alert alert-danger mt-3" ng-if="validateForm.trangThai === false">
+                <strong>Form không hợp lệ!</strong> 
+                <br>
+                {{validateForm.noiDung}}
+            </div>
+            </form>
+      </div>
+    </div>
+</div>

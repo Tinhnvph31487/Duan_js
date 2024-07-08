@@ -1,0 +1,76 @@
+<div class="container-fluid">
+        <div class="row">
+                <div class="container pt-5">
+                    <h3 class="text-center">Quản lý đơn hàng</h3>
+                    <table class="table table-hover table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th>STT</th>
+                            <th>Tên khách hàng</th>
+                            
+                            <th>Trạng thái</th>
+                            <th>Chức năng</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Khách hàng 01</td>
+                           
+                            <td><button class="btn btn-success rounded-pill btn-sm">Chờ xác nhận</button></td>
+                            <td style="width: 1px;" class="text-nowrap">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Xacnah">
+                                    Xem chi tiết đơn hàng
+                                  </button>
+                                  
+                                  <!-- The Modal -->
+                                  <div class="modal" id="Xacnah">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                  
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                          <h4 class="modal-title justify-content-center d-flex">Khách hàng 01</h4>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                  
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                  <tr>
+                                                    <th>Tên sản phẩm</th>
+                                                    <th>Số lương</th>
+                                                    <th>Đơn giá</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr ng-repeat="item in danhsachDH">
+                                                    <td>{{item.tenSanPham}}</td>
+                                                    <td>{{item.soluong}}</td>
+                                                    <td>{{item.gia*item.soluong}}</td>
+                                                    
+                                                  </tr>
+                                                </tbody>
+                                                
+                                              </table>
+                                              Tổng tiền : {{tongGia()}}
+                                        </div>
+                                  
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        </div>
+                                  
+                                      </div>
+                                    </div>
+                                  </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+               
+            </div>
+        </div>
+    </div
